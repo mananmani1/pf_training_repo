@@ -21,12 +21,6 @@
 # values_list = [pair[1] for pair in my_list]
 # print(values_list)
 
-# def add_to_list():
-#     if len(values_list)>5:
-#         list.pop()
-#     print(list)
-# add_to_list()
-
 
 
 #Task 1
@@ -39,7 +33,7 @@ def add_list():
         key_value=input(f'Enter your key {length+1}:\t')
         values=input(f'Enter your value {length+1}:\t')
         if key_value in key:
-            print('This key is already filled pleas choose another key')
+            print('This key is already filled please choose another key')
             continue
         
         else:
@@ -50,7 +44,7 @@ def add_list():
     print  ("Your Final List:\n",value) 
 
 
-
+add_list()
 
 
 
@@ -65,13 +59,13 @@ main_list = []
 def q_list():
     length=0
     while(length<5):
-        values=input(f'Enter your value {length+1}:\t')
+        values=input(f'Enter your value {length+1} out of 5:\t')
         main_list.append(values)
         length+=1
 
     print  ("Your Final List as Que:\n",main_list[::-1])
     while True:
-        another_value = input('will you add another value:\t').lower()
+        another_value = input('will you add another value(yes/no):\t').lower()
         if another_value == 'yes':
                 new_value=input(f'Enter your value {length+1}:\t')
                 main_list.append(new_value)
@@ -83,22 +77,21 @@ def q_list():
                 print  ("\nYour Final List as Queue:\n",main_list[::-1])
                 break
 
-                
-#Task 3
 q_list()
+               
+#Task 3
 def random_list():
     print  ("\nYour Final List as Queue:\n",main_list[::-1])
     while True:
-        another_value = input('woul you add new value list:\t').lower()
+        another_value = input('would you add new value list(yes/no):\t').lower()
         if another_value == 'yes':
             new_value=input(f'Enter your new value\n')
             if new_value in main_list:
-                print('This value is already exist')
+                print('This value is already exist,please try another value')
                 continue
 
             else:
                 main_list.append(new_value)
-#                 length+=1
                 print("Your Final List:\n",main_list[::-1])
 
 
@@ -108,7 +101,7 @@ def random_list():
     
 
 
-
+random_list()
     
 
 
@@ -125,13 +118,10 @@ def table_form(a, b):
         print(" ")
 
 if __name__ == "__main__":
-    rows = int(input("Enter the rows: "))
-    cols = int(input("Enter the columns: "))
+    rows = int(input("Enter the number of rows: "))
+    cols = int(input("Enter the number of  columns: "))
 
-add_list()
-q_list()    
-random_list()
-table(rows,cols)
+table_form(rows,cols)
 
     
 
