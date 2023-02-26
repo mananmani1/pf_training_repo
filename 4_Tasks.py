@@ -23,10 +23,12 @@
 
 
 
-#Task 1
+# Task 1
+
+value = []
+
 def add_list():
     key = []
-    value = []
     length=0
     
     while(length<10):
@@ -41,7 +43,7 @@ def add_list():
             key.append(key_value)
             length+=1
         
-    print  ("Your Final List:\n",value) 
+    print  ("Your Final List of values:\n\n",value) 
 
 
 add_list()
@@ -53,50 +55,54 @@ add_list()
 
 
 
+#get the first of of previous list of values
+value_list_length = len(value)
+middle_index = value_list_length//2
 
+first_half_list = value[:middle_index]
 main_list = []
-
 def q_list():
-    length=0
-    while(length<5):
-        values=input(f'Enter your value {length+1} out of 5:\t')
-        main_list.append(values)
-        length+=1
+    #if u want input from user
+    # length=0
+    # while(length<5):
+    #     values=input(f'Enter your value {length+1} out of 5:\t')
+    #     main_list.append(values)
+    #     length+=1
 
-    print  ("Your Final List as Que:\n",main_list[::-1])
+    print  ("Now You got List as Queue:\n",first_half_list)
     while True:
-        another_value = input('will you add another value(yes/no):\t').lower()
+        another_value = input('will you add another value in your Queue(yes/no):\t').lower()
         if another_value == 'yes':
-                new_value=input(f'Enter your value {length+1}:\t')
-                main_list.append(new_value)
-                main_list.pop(0)
-                print("Your Final List:\n",main_list[::-1])
+                new_value=input(f'Enter your value in Queue:\t')
+                first_half_list.append(new_value)
+                first_half_list.pop(0)
+                print("Your Final List as Queue:\n",first_half_list[::-1])
                 
 
         elif another_value =='no':
-                print  ("\nYour Final List as Queue:\n",main_list[::-1])
+                print  ("\nYour Final List as Queue:\n",first_half_list[::-1])
                 break
 
 q_list()
                
 #Task 3
 def random_list():
-    print  ("\nYour Final List as Queue:\n",main_list[::-1])
+    print  ("\nYou got now simple List :\n",first_half_list)
     while True:
-        another_value = input('would you add new value list(yes/no):\t').lower()
+        another_value = input('would you add new value in list(yes/no):\t').lower()
         if another_value == 'yes':
-            new_value=input(f'Enter your new value\n')
-            if new_value in main_list:
+            new_value=input(f'Enter your new value:\t')
+            if new_value in first_half_list:
                 print('This value is already exist,please try another value')
                 continue
 
             else:
-                main_list.append(new_value)
-                print("Your Final List:\n",main_list[::-1])
+                first_half_list.append(new_value)
+                print("Your Final List :\n",first_half_list)
 
 
         elif another_value =='no':
-                print  ("\nYour Final List as Queue:\n",main_list[::-1])
+                print  ("\nYour Simple Final List :\n",first_half_list)
                 break
     
 
@@ -114,8 +120,8 @@ def table_form(a, b):
     for i in range(a):
         for j in range(b):
             r= random.randint(15,30)
-            print(r,  end=" ")
-        print(" ")
+            print(r,end=" ")
+        print("")
 
 if __name__ == "__main__":
     rows = int(input("Enter the number of rows: "))

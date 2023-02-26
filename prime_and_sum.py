@@ -3,7 +3,7 @@ def prime_and_sum(n):
         if n % i == 0:
             return -1
 
-    return sum(range(n + 1))
+    return sum(range(n+1))
 
 while True:
     
