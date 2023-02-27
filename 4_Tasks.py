@@ -31,7 +31,7 @@ def add_list():
     key = []
     length=0
     
-    while(length<10):
+    while(length<6):
         key_value=input(f'Enter your key {length+1}:\t')
         values=input(f'Enter your value {length+1}:\t')
         if key_value in key:
@@ -59,6 +59,7 @@ add_list()
 value_list_length = len(value)
 middle_index = value_list_length//2
 
+
 first_half_list = value[:middle_index]
 main_list = []
 def q_list():
@@ -69,7 +70,7 @@ def q_list():
     #     main_list.append(values)
     #     length+=1
 
-    print  ("Now You got List as Queue:\n",first_half_list)
+    print  ("Now You got List as Queue:\n",first_half_list[::-1])
     while True:
         another_value = input('will you add another value in your Queue(yes/no):\t').lower()
         if another_value == 'yes':
