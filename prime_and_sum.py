@@ -1,4 +1,4 @@
-def prime_and_sum(n):
+f prime_and_sum(n):
     for i in range(2, int(n)):
         if n % i == 0:
             return -1
