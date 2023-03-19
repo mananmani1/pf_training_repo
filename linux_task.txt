@@ -1,0 +1,26 @@
+1# Create a new directory named as d and copy all text files from abc directory into d
+mkdir d
+cp direct/home/manan/abc/*.txt d
+
+or incase of current directory
+
+cp ./abc/*.txt ./d
+
+2#Create a new directory named as p and create empty py files in it with exactly same names as py files in abc
+mkdir p
+
+for f in *.py; do touch "./p/$f"; done;
+
+
+3#Count all jpeg files in directory abc
+find -name "*.jpeg" | wc -l
+
+
+4# Create a directory labels and create the txt files with exactly the same names as jepg in abc directory.
+mkdir labels
+
+for file in images/*.jpeg; do if [ -e "labels/$(basename "$file" .jpeg).txt" ]; then cp "$file" final/ fi done
+
+
+5# Also done that creat two local directory and and 1 repo at git ,
+so push files from one local directory to same git repo and got pull by other local directory from same repo.
